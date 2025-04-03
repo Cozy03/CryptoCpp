@@ -54,18 +54,10 @@ A personal cryptography learning module where I implement various cryptographic 
 cpp-module/
 ├── external/                # Git submodules (gtest, benchmark)
 ├── include/                 # Header files (.hpp)
-│   └── classical_ciphers/
-│       └── caeser_cipher/
-│           └── caeser_cipher.hpp
 ├── src/                     # Source files (.cpp)
-│   └── classical_ciphers/
-│       └── caesar_cipher.cpp
 ├── tests/                   # Unit tests
-│   └── caeser_cipher_test.cpp
 ├── benchmark/               # Benchmarking
-│   └── caeser_cipher_bench.cpp
 ├── Images/                  # Project logo and visuals
-│   └── logo.png
 ├── CMakeLists.txt           # Build script
 ├── README.md
 └── Doxyfile                 # Documentation config
@@ -95,12 +87,12 @@ make test
 # OR
 ctest
 # OR run specific test
-./test_caeser_cipher
+./classical_cipher_test
 ```
 
 ### Running Benchmarks
 ```bash
-./caeser_cipher_bench
+./classical_cipher_bench
 ```
 
 ---
@@ -109,7 +101,7 @@ ctest
 
 ### 1. Classical Ciphers
 - [x] **Caesar Cipher**
-- [ ] Vigenère Cipher
+- [x] **Vigenère Cipher**
 - [ ] Playfair Cipher
 - [ ] Hill Cipher
 - [ ] One-Time Pad (Vernam)

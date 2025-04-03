@@ -1,5 +1,7 @@
-#include <classical_ciphers/caeser_cipher/caeser_cipher.hpp>
+#include <classical_ciphers/caeser_cipher.hpp>
 #include <cctype>
+
+namespace cryptcpp::classical {
 
 Ciphertext caeser_encrypt(const Plaintext &pln, uint8_t key) {
     Plaintext result = pln;
@@ -7,11 +9,11 @@ Ciphertext caeser_encrypt(const Plaintext &pln, uint8_t key) {
     uint8_t digit_key = key % 10;
 
     for (char &c : result) {
-        if (isalpha(c)) {
-            char base = isupper(c) ? 'A' : 'a';
+        if (std::isalpha(c)) {
+            char base = std::isupper(c) ? 'A' : 'a';
             c = (c - base + alpha_key) % 26 + base;
         }
-        else if (isdigit(c)) {
+        else if (std::isdigit(c)) {
             c = (c - '0' + digit_key) % 10 + '0';
         }
     }
@@ -24,13 +26,15 @@ Plaintext caeser_decrypt(const Ciphertext &cxt, uint8_t key) {
     uint8_t digit_key = key % 10;
 
     for (char &c : result) {
-        if (isalpha(c)) {
-            char base = isupper(c) ? 'A' : 'a';
+        if (std::isalpha(c)) {
+            char base = std::isupper(c) ? 'A' : 'a';
             c = (c - base - alpha_key + 26) % 26 + base;
         }
-        else if (isdigit(c)) {
+        else if (std::isdigit(c)) {
             c = (c - '0' - digit_key + 10) % 10 + '0';
         }
     }
     return result;
 }
+
+} // namespace cryptcpp::classical
