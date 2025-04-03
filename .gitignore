@@ -1,0 +1,55 @@
+# Build directories
+/build/
+/out/
+/bin/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake-build-*/
+
+# Compiled binary files
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Generated files
+Makefile
+install_manifest.txt
+compile_commands.json
+
+# CTest files
+Testing/
+CTestTestfile.cmake
+
+# Doxygen output
+/docs/html/
+/docs/latex/
+/*.dox
+
+# VS Code config
+.vscode/
+
+# Mac OS files
+.DS_Store
+
+# Editor files
+*.swp
+*~
+.idea/
+
+# Logs
+*.log
+
+# GoogleTest & Benchmark build directories (optional, if you use submodules and build them inside external/)
+external/**/build/
+external/**/CMakeFiles/
+external/**/Makefile
+external/**/CMakeCache.txt
+
+# Optional - if you generate coverage reports
+coverage/
+*.gcda
+*.gcno
+*.gcov
